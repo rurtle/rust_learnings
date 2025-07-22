@@ -1,0 +1,89 @@
+# Rust Learning Path: Beginner to Intermediate (4-6 Months)
+
+## Goal
+Attain **intermediate proficiency in Rust** by **March or April 2026**.
+
+## Time Commitment
+Approximately **4 hours per week** (study + hands-on practice).
+
+---
+
+## Core Learning Strategy
+This path is tailored for someone with a strong C/C++ background who learns best by doing. We'll balance quick theoretical skims with intensive hands-on practice, reinforced by regular, spaced review weeks.
+
+---
+
+## Weekly Plan
+
+| Week | Date Range (Approx.) | Phase & Focus Area | Theoretical Pointers (Quick Skim, "The Book" Ref) | Hands-on Exercises & Project Ideas | Key Resources |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **1** | Jul 28 - Aug 3, 2025 | **Phase 1: Basics & Ownership** <br> **Getting Started & Basic Syntax** | **Rust Philosophy:** Safety, speed, concurrency. (Ch 1: "Why Rust?") <br> **`cargo`:** Build system & package manager. (Ch 1: "Hello, World!") <br> **Basic Syntax:** `let`, `let mut`, data types, `println!`. (Ch 3: "Common Programming Concepts") | Install Rust (`rustup`). `cargo new`, `cargo run`. Modify `main.rs` to print various messages. Experiment with basic variables & types. <br> **Project Idea:** Simple CLI greeting utility taking user input. | **The Rust Programming Language** (Ch 1, 3), **Rust By Example**, Your IDE (`rust-analyzer`) |
+| **2** | Aug 4 - Aug 10, 2025 | **Phase 1: Basics & Ownership** <br> **Ownership - The Game Changer** | **Ownership:** Single owner, value dropped when owner out of scope. (Ch 4: "What Is Ownership?") <br> **Move Semantics:** Ownership transfer for non-`Copy` types. (Ch 4: "Ways Variables and Data Interact: Move") <br> **Borrowing:** `&` (immutable, many), `&mut` (mutable, one). (Ch 4: "References and Borrowing") <br> **Lifetimes (Intro):** Compiler infers to ensure valid refs. (Ch 10.3: "Validating References...") | Write functions demonstrating ownership move, immutable & mutable borrowing. Intentionally trigger borrow checker errors. <br> **Project Idea:** Simulate a "bag" of items (`Vec<String>`), showing ownership changes. | **The Rust Programming Language** (Ch 4), **Rust By Example** (Ownership sections), **Exercism.org** (Ownership problems) |
+| **3** | Aug 11 - Aug 17, 2025 | **Phase 1: Basics & Ownership** <br> **Structs & Enums** | **Structs:** Custom data types, `impl` for methods. (Ch 5: "Using Structs...") <br> **Enums:** Types with variants (can hold data). (Ch 6: "Enums and Pattern Matching") <br> **`match` Expressions:** Exhaustive pattern matching. (Ch 6: "`match` Control Flow") | Define structs & enums. Implement methods for structs. Use `match` to process enum variants. <br> **Project Idea:** Model a "Book" struct (title, author, year). Create a vector of books. | **The Rust Programming Language** (Ch 5, 6), **Rust By Example** (Structs, Enums, Match) |
+| **4** | Aug 18 - Aug 24, 2025 | **Phase 1: Basics & Ownership** <br> **Collections & Error Handling** | **Collections:** `Vec`, `String`, `HashMap`. (Ch 8: "Common Collections") <br> **`Result<T, E>`:** Recoverable errors, `Ok`/`Err` variants. (Ch 9: "Error Handling" - `Result` & `?`) <br> **`Option<T>`:** `Some`/`None` for optional values. (Ch 6: "`Option` Enum...") | Work with `Vec`, `String`, `HashMap` (add, remove, iterate). Write functions returning `Result`. Handle errors with `match` and `?`. Use `Option` for searches. <br> **Project Idea:** Extend Book project: add/remove books (returning `Result`), store read counts in `HashMap`. | **The Rust Programming Language** (Ch 8, 9), **Rust By Example** (Collections, Result, Option) |
+| --- | --- | --- | --- | --- | --- |
+| **5** | Aug 25 - Aug 31, 2025 | **REVIEW WEEK 1** <br> **Reinforce Core Concepts** | **Review:** Ownership & Borrowing are key. Revisit Ch 4/10.3 from The Rust Programming Language. | Revisit challenging examples from Weeks 1-4. Work through beginner-level **Exercism.org** problems for ownership, basics, structs, enums, collections, `Result`. <br> **Mini-Project:** Simple text-based adventure game where objects are owned/borrowed. | **The Rust Programming Language** (Ch 4, 10.3), **Exercism.org** (Rust Track - beginner), Your Own Code from previous weeks |
+| --- | --- | --- | --- | --- | --- |
+| **6** | Sep 1 - Sep 7, 2025 | **Phase 2: Abstraction & Modularity** <br> **Traits - Rust's Interfaces** | **Traits:** Shared behavior, like interfaces/abstract classes. (Ch 10.2: "Traits: Defining Shared Behavior") <br> **Trait Objects (`dyn Trait`):** Runtime polymorphism. (Ch 17.2: "Using Trait Objects...") | Define & implement a trait (e.g., `Printable`). Write functions accepting types implementing traits (trait bounds). Use `Box<dyn Trait>` for dynamic dispatch. <br> **Project Idea:** Implement `Printable` for `Book` & `Author`. Write a generic print function. | **The Rust Programming Language** (Ch 10.2, 17.2), **Rust By Example** (Traits) |
+| **7** | Sep 8 - Sep 14, 2025 | **Phase 2: Abstraction & Modularity** <br> **Generics - Flexible Code** | **Generics:** Code works with multiple types (like C++ templates). (Ch 10.1: "Generic Data Types...") <br> **Trait Bounds:** Constrain generic types to implement specific traits. (Ch 10.2: "Traits as Parameters") | Write generic functions (e.g., `largest`). Create generic structs. Use trait bounds (e.g., `T: PartialOrd + Copy`). <br> **Project Idea:** Generic function to find largest element in a list that implements `PartialOrd` and `Copy`. | **The Rust Programming Language** (Ch 10.1, 10.2), **Rust By Example** (Generics) |
+| **8** | Sep 15 - Sep 21, 2025 | **Phase 2: Abstraction & Modularity** <br> **Modules & Crates + Basic Testing** | **Modules (`mod`):** Code organization, namespaces. (Ch 7: "Managing Growing Projects..." - Modules) <br> **Crates:** Compilation unit (library/executable). (Ch 7: "Packages and Crates") <br> **Visibility (`pub`), `use`:** Control access & bring items into scope. (Ch 7: "Exposing Paths...", "Bringing Paths into Scope...") <br> **Testing:** `#[test]` attribute, `cargo test`. (Ch 11: "Writing Automated Tests") | Refactor Book project into `models.rs`, `utils.rs`. Use `mod`, `pub`, `use`. Add basic unit tests for functions. <br> **Project Idea:** Refactor existing code into multiple modules. Add unit tests for your functions. | **The Rust Programming Language** (Ch 7, 11), **Rust By Example** (Modules) |
+| --- | --- | --- | --- | --- | --- |
+| **9** | Sep 22 - Sep 28, 2025 | **REVIEW WEEK 2** <br> **Reinforce Abstractions & Organization** | **Review:** Traits, Generics, Modularity, Testing. <br> Consider `static` vs `dynamic` dispatch. | Revisit trait object examples and generic trait bounds. Practice module structuring from scratch. Work through intermediate-level **Exercism.org** problems on traits & generics. <br> **Mini-Project:** Create a small library crate (with `lib.rs`) and use it in a separate binary crate, demonstrating proper modularity. | **The Rust Programming Language** (Ch 7, 10, 11, 17), **Exercism.org** (Rust Track - intermediate) |
+| --- | --- | --- | --- | --- | --- |
+| **10-11** | Sep 29 - Oct 12, 2025 | **Phase 3: Intermediate & Practical** <br> **Concurrency - Fearless Concurrency** | **Threads (`std::thread`).** (Ch 16.1: "Using Threads...") <br> **Message Passing (`std::sync::mpsc::channel`).** (Ch 16.2: "Using Message Passing...") <br> **Shared State:** `Arc<T>` (thread-safe ref counting), `Mutex<T>` (exclusive access). (Ch 16.3: "Shared-State Concurrency") <br> **`Send` & `Sync` Traits:** Marker traits for thread safety. (Ch 16.4: "Extensible Concurrency...") | Implement producer-consumer using channels. Build a multi-threaded counter with `Arc<Mutex<i32>>`. <br> **Project Idea:** Parallel sum/average calculation for a large vector. | **The Rust Programming Language** (Ch 16), **Rust By Example** (Concurrency), Standard Library `std::thread`, `std::sync` docs. |
+| **12-13** | Oct 13 - Oct 26, 2025 | **Phase 3: Intermediate & Practical** <br> **File I/O & CLI Apps** | **File I/O:** `std::fs`, `std::io` (return `Result`). (Ch 12: "An I/O Project" - "Reading a File") <br> **CLI Args:** `std::env::args`. `clap` crate for robust parsing. (Ch 12: "Reading Command Line Arguments") | Read/write files. Handle file I/O errors. Parse basic CLI args. Integrate `clap` for complex CLI options. <br> **Project Idea:** Simple `grep`-like tool to search for string in file. Or, a CSV processor. | **The Rust Programming Language** (Ch 12), `std::fs` / `std::io` docs, `clap` crate documentation (crates.io). |
+| **14** | Oct 27 - Nov 2, 2025 | **REVIEW WEEK 3** <br> **Consolidate Concurrency & I/O** | **Review:** Concurrency primitives (`Arc`, `Mutex`, channels), robust error handling in I/O, CLI argument parsing. | Revisit complex concurrency examples. Practice more file I/O operations with full error handling. Build another small CLI tool combining file I/O and argument parsing. <br> **Exercism.org** (Concurrency & File System problems). | All resources from Weeks 10-13. |
+| **15-16** | Nov 3 - Nov 16, 2025 | **Phase 3: Intermediate & Practical** <br> **Smart Pointers & Deeper Lifetimes** | **Smart Pointers:** `Box<T>` (heap, unique ownership), `Rc<T>` (multiple, single-thread), `RefCell<T>` (interior mutability). (Ch 15: "Smart Pointers") <br> **Explicit Lifetimes:** When compiler needs help. (Ch 10.3: "Validating References..." - deeper examples) | Implement a simple singly linked list (requires `Box`). Use `Rc` for shared data within a single thread. Experiment with `RefCell` for interior mutability. Practice lifetime annotations for complex function signatures. <br> **Project Idea:** Simple linked list. Or, analyze a scenario where `RefCell` (single-threaded) might be used. | **The Rust Programming Language** (Ch 10.3, 15), **Rust By Example** (Smart Pointers, Lifetimes) |
+| **17** | Nov 17 - Nov 23, 2025 | **Phase 3: Intermediate & Practical** <br> **Asynchronous Programming (Intro)** | **Async/Await:** Non-blocking I/O, `Future` trait. (Rust Async Book: Ch 1-3 skim) <br> **Runtimes:** `tokio` or `async-std`. | Set up a project with an async runtime (`tokio`). Write simple `async` functions. Experiment with basic non-blocking operations (e.g., faking async delay). <br> **Project Idea:** Simple async client that fetches data (e.g., via `reqwest` crate). | **The Async Book**, `tokio` or `async-std` documentation. |
+| --- | --- | --- | --- | --- | --- |
+| **18-22** | Nov 24 - Dec 28, 2025 | **Phase 4: Beyond Basics & Project Work** <br> **Major Project & Ecosystem Exploration** | **`Cargo.toml`:** Features, workspaces, dependencies. (Ch 14: "More About Cargo...") <br> **Crates.io:** Package registry. (Ch 14: "Publishing a Crate") <br> **API Docs:** `cargo doc --open`. <br> **FFI (Optional):** Calling C/C++ from Rust. (Ch 19.1: "Unsafe Rust" - `extern` functions; Nomicon FFI chapter) | **Choose ONE Major Project:** <br> - A more robust CLI tool (e.g., file organizer, custom `grep`). <br> - A basic REST API backend (using `actix-web`/`warp`). <br> - Simple network client/server. <br> - Data processing pipeline. <br> - (Advanced) Implement FFI calls to a simple C library. <br> **Bonus:** Incorporate Advent of Code puzzles during December. | All previous resources, `crates.io`, specific crate documentation (e.g., `tokio`, `clap`, `reqwest`, `serde`, web frameworks). |
+| --- | --- | --- | --- | --- | --- |
+| **23** | Dec 29, 2025 - Jan 4, 2026 | **REVIEW WEEK 4** <br> **Consolidate Project Learnings & Advanced Concepts** | **Review:** Smart Pointers, Lifetimes, Async basics, and how they apply in your project. | Analyze your project's challenges and solutions. Refactor parts of your project applying best practices. Revisit specific theoretical sections for areas you struggled with during the project. <br> Continue to explore **Exercism.org** for problems related to complex data structures or specific crate usage. | Your project code, **The Rust Programming Language** (Ch 10.3, 15, 16), **Exercism.org**. |
+| --- | --- | --- | --- | --- | --- |
+| **24** | Jan 5 - Jan 11, 2026 | **Phase 4: Beyond Basics & Project Work** <br> **Advanced Traits & Closures/Iterators** | **Associated Types in Traits.** (Ch 19.3: "Advanced Features" - "Associated Types") <br> **Closures:** Anonymous functions that capture environment. (Ch 13.1: "Closures") <br> **Iterators:** Efficient data processing. (Ch 13.2: "Processing a Series of Items...") | Define a trait with an associated type. Use closures with `Vec` methods (`map`, `filter`, `for_each`). Practice complex iterator chains. <br> **Project Idea:** Enhance previous project by using iterators and closures for data transformation. | **The Rust Programming Language** (Ch 13, 19.3), **Rust By Example** (Closures, Iterators). |
+| **25** | Jan 12 - Jan 18, 2026 | **Phase 4: Beyond Basics & Project Work** <br> **Advanced Pattern Matching & Unsafe Rust (Intro)** | **Advanced Patterns:** `if let`, `while let`, destructuring. (Ch 18: "Patterns and Matching") <br> **Unsafe Rust:** When safety guarantees are relaxed (`unsafe` keyword). (Ch 19.1: "Unsafe Rust" - focus on the 5 unsafe actions). | Practice complex `match` patterns. Write a minimal `unsafe` block (e.g., raw pointer dereference) to understand its purpose and danger. If pursuing FFI, dedicate more time here. <br> **Project Idea:** Write an intentionally unsafe function, then rewrite it in safe Rust to contrast. | **The Rust Programming Language** (Ch 18, 19.1), Rust Nomicon (FFI chapter for deeper unsafe). |
+| **26** | Jan 19 - Jan 25, 2026 | **Phase 4: Beyond Basics & Project Work** <br> **Intermediate Asynchronous Programming** | **Deeper Async:** Error handling in async, using `select!` for multiple futures. (Async Book: Deeper dive into chapters 4+) | Build a more complex async application (e.g., multiple concurrent network requests). Implement timeouts or handle multiple async events. <br> **Project Idea:** Extend your async project from Week 17 to handle more complex scenarios (e.g., retries, concurrent requests). | **The Async Book** (deeper chapters), `tokio` or `async-std` advanced examples. |
+| --- | --- | --- | --- | --- | --- |
+| **27** | Jan 26 - Feb 1, 2026 | **FINAL REVIEW & Consolidation** | **Review:** All core and intermediate concepts. Identify weak spots. | Refactor and polish your main project code. Attempt a challenging **Exercism.org** problem or a small **LeetCode** problem that combines multiple Rust concepts. Read more open-source Rust code. <br> **Next Steps:** Consider contributing to an OS project, or starting a new, more ambitious personal project. | All previous resources, your completed project, open-source Rust projects. |
+
+---
+
+## Key Resources
+
+1.  **The Rust Programming Language Book ("The Book")**: [https://doc.rust-lang.org/book/](https://doc.rust-lang.org/book/)
+    * **Purpose:** Your primary source for concise theoretical explanations. Use the chapter/section references provided above to quickly skim concepts before coding.
+
+2.  **Rust By Example**: [https://doc.rust-lang.org/rust-by-example/](https://doc.rust-lang.org/rust-by-example/)
+    * **Purpose:** Excellent for runnable code examples. After skimming "The Book", come here to see concepts immediately in action. Type, run, and modify the examples.
+
+3.  **Exercism.org (Rust Track)**: [https://exercism.org/tracks/rust](https://exercism.org/tracks/rust)
+    * **Purpose:** Provides guided exercises with automated tests. Ideal for solidifying individual concepts and getting immediate feedback on your solutions. Use this heavily during review weeks.
+
+4.  **Advent of Code**: [https://adventofcode.com/](https://adventofcode.com/)
+    * **Purpose:** A fun, practical way to apply all your Rust knowledge to daily coding puzzles, especially enjoyable in December. Highly recommended for integrating skills.
+
+5.  **Tour of Rust**: [https://tourofrust.com/](https://tourofrust.com/)
+    * **Purpose:** A very quick, interactive overview for a high-level feel, especially useful at the very beginning or for a rapid recap.
+
+6.  **Your IDE (VS Code with `rust-analyzer`)**:
+    * **Purpose:** Essential for productivity. Provides real-time feedback, auto-completion, and error explanations that are invaluable for hands-on learning.
+
+7.  **The Async Book**: [https://rust-lang.github.io/async-book/](https://rust-lang.github.io/async-book/)
+    * **Purpose:** Dedicated theoretical and practical guide for Rust's asynchronous programming.
+
+8.  **The Rustonomicon**: [https://doc.rust-lang.org/nomicon/](https://doc.rust-lang.org/nomicon/)
+    * **Purpose:** A deeper, more advanced guide to "unsafe" Rust, memory, and FFI. Refer to this when specifically working with `unsafe` or FFI.
+
+---
+
+## Important Considerations for Your Learning
+
+* **Prioritize Ownership & Borrowing:** This is non-negotiable. If you rush it, you'll constantly fight the compiler. Embrace the compile errors as learning opportunities.
+* **Patience is Key:** Rust has a steeper initial learning curve than many other languages, but it pays off with fewer runtime bugs and higher confidence in your code. Don't get discouraged by the borrow checker; it's your friend!
+* **Embrace Compiler Errors:** Rust's compiler errors are famously helpful. Read them carefully; they often tell you exactly what's wrong and suggest how to fix it.
+* **Small, Focused Projects:** Instead of one single, massive project, tackle many small, focused projects. Each one helps reinforce different aspects of the language.
+* **Keep Comparing to C/C++:** Your background is a huge asset. Continuously analyze how Rust's solutions differ from C/C++ and appreciate the trade-offs and benefits.
+
+---
+
+I hope this comprehensive Markdown file helps you immensely on your Rust journey! Let me know if you have any other questions as you go along.
